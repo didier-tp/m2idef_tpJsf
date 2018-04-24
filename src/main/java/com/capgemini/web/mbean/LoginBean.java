@@ -1,11 +1,11 @@
 package com.capgemini.web.mbean;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-@RequestScoped
-//@SessionScoped
+//@RequestScoped
+@SessionScoped
 public class LoginBean {
 	
 	private String username;

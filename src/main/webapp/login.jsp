@@ -12,7 +12,7 @@
     <h:messages></h:messages> <!-- affiche d'eventuels messages d'erreur -->
     <h:form>
        username: <h:inputText value="#{loginBean.username}" /> <br/>
-       password: <h:inputText value="#{loginBean.password}" /> <br/>
+       password: <h:inputSecret value="#{loginBean.password}" /> <br/>
        <h:commandButton value="connexion/login"
            action="#{loginBean.connexion}" />
     </h:form>
