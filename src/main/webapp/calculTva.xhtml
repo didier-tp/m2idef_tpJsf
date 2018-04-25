@@ -14,7 +14,9 @@
 		    <h:form>
 		       ht: <h:inputText id="idHt" label="ht" value="#{calculTva.ht}" />
 		           <h:message for="idHt" errorClass="error" /> <br/>
-		       taux: <h:inputText id="taux" label="taux" value="#{calculTva.taux}" /> 
+		       taux: <h:inputText id="taux" label="taux" value="#{calculTva.taux}" >
+		                <f:validateDoubleRange minimum="0" maximum="33"/>
+		             </h:inputText> 
 		            <h:message for="taux" errorClass="error" /> <br/>
 		       <h:commandButton value="calculer tva"
 		           action="#{calculTva.calculerTvaEtTtc}" />
