@@ -10,15 +10,19 @@
     <ui:define name="title">listeProduits</ui:define>
 	<ui:define name="header">liste des produits</ui:define>
 	<ui:define name="content">
+	
 	         <h:dataTable value="#{produitBean.listeProduits}"
 	                      var="p" border="1">
 	              <h:column>
+	                  <f:facet name="header"><f:verbatim>numero</f:verbatim></f:facet>
 	                  <h:outputText value="#{p.num}" />
 	              </h:column>
 	               <h:column>
+	               <f:facet name="header"><f:verbatim>label</f:verbatim></f:facet>
 	                  <h:outputText value="#{p.label}" />
 	              </h:column>
 	               <h:column>
+	               <f:facet name="header"><f:verbatim>prix</f:verbatim></f:facet>
 	                  <h:outputText value="#{p.prix}" />
 	              </h:column>
 	         </h:dataTable>
