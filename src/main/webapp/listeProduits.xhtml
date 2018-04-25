@@ -11,6 +11,19 @@
 	<ui:define name="header">liste des produits</ui:define>
 	<ui:define name="content">
 	
+	<h:form>
+	
+		<h:selectOneMenu value="#{produitBean.categorie}">
+			<f:selectItem itemValue="1" itemLabel="bureau"/>
+			<f:selectItem itemValue="2" itemLabel="film"/>
+			<f:selectItem itemValue="3" itemLabel="livre"/>
+		</h:selectOneMenu>
+		
+		<h:commandButton value="filtrer selon categorie"
+		                 action="#{produitBean.filtrerSelonCategorie}"/>
+		
+	</h:form>
+	
 	         <h:dataTable value="#{produitBean.listeProduits}"
 	                      var="p" border="1">
 	              <h:column>
