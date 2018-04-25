@@ -10,10 +10,12 @@
     <ui:define name="title">calcul tva</ui:define>
 	<ui:define name="header">CalculTva</ui:define>
 	<ui:define name="content">
-	        <h:messages errorClass="error"/> <!-- affiche d'eventuels messages d'erreur -->
+	        <h:messages  globalOnly="true" errorClass="error"/> <!-- affiche d'eventuels messages d'erreur -->
 		    <h:form>
-		       ht: <h:inputText value="#{calculTva.ht}" /> <br/>
-		       taux: <h:inputText value="#{calculTva.taux}" /> <br/>
+		       ht: <h:inputText id="idHt" label="ht" value="#{calculTva.ht}" />
+		           <h:message for="idHt" errorClass="error" /> <br/>
+		       taux: <h:inputText id="taux" label="taux" value="#{calculTva.taux}" /> 
+		            <h:message for="taux" errorClass="error" /> <br/>
 		       <h:commandButton value="calculer tva"
 		           action="#{calculTva.calculerTvaEtTtc}" />
 		    </h:form>
