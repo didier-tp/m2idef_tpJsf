@@ -14,9 +14,13 @@
 	<h:form>
 	
 		<h:selectOneMenu value="#{produitBean.categorie}">
+		   <f:selectItems value="#{produitBean.listeCategorie}"
+                     var="c" itemValue="#{c.idCat}" itemLabel="#{c.label}"/>
+		   <!--  
 			<f:selectItem itemValue="1" itemLabel="bureau"/>
 			<f:selectItem itemValue="2" itemLabel="film"/>
 			<f:selectItem itemValue="3" itemLabel="livre"/>
+			-->
 		</h:selectOneMenu>
 		
 		<h:commandButton value="filtrer selon categorie"
