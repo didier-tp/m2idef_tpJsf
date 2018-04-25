@@ -3,6 +3,7 @@ package com.capgemini.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.capgemini.entity.Categorie;
 import com.capgemini.entity.Produit;
 
 /*
@@ -46,6 +47,15 @@ public class ServiceProduit {
 		
 		produits.add(new Produit(21L,"livre 1" , 7.5 ,"Roman"));
 		produits.add(new Produit(22L,"livre 2" , 6.5 ,"BD"));
+	}
+	
+	public List<Categorie> rechercherListeCategories(){
+		List<Categorie> listeCat = new ArrayList<Categorie>();
+		listeCat.add(new Categorie(1L,"fournitures de bureau"));
+		listeCat.add(new Categorie(2L,"films"));
+		listeCat.add(new Categorie(3L,"livres"));
+		//un SELECT ... FROM Categorie sur vrai projet
+		return listeCat;
 	}
 
 }
