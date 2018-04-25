@@ -1,7 +1,9 @@
 package com.capgemini.web.mbean;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 //@RequestScoped
@@ -15,6 +17,10 @@ public class LoginBean {
 		String suite = null;
 		if(password.equals("pwd"+username)) {
 			suite="user";
+		}else {
+			FacesContext.getCurrentInstance().addMessage(null/*global*/,
+			  new FacesMessage("invalid username or password",
+					           "detail eventuel"));
 		}
 		return suite;
 	}

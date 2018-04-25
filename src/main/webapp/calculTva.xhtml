@@ -21,7 +21,10 @@
 		       <h:commandButton value="calculer tva"
 		           action="#{calculTva.calculerTvaEtTtc}" />
 		    </h:form>
-		    tva = <h:outputText value="#{calculTva.tva}" /> <br/>
+		    tva = <h:outputText value="#{calculTva.tva}" >
+		             <f:convertNumber maxFractionDigits="2" />
+		          </h:outputText>
+		           <br/>
 		    ttc = <h:outputText value="#{calculTva.ttc}" /> <br/>
 	</ui:define>
 </ui:composition>
