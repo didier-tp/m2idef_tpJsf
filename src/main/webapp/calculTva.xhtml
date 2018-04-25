@@ -7,11 +7,12 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="templates/common.xhtml">
+    <ui:define name="title">calcul tva</ui:define>
 	<ui:define name="header">
 	    Mon entete que j'aime
 	</ui:define>
 	<ui:define name="content">
-	        <h:messages></h:messages> <!-- affiche d'eventuels messages d'erreur -->
+	        <h:messages errorClass="error"/> <!-- affiche d'eventuels messages d'erreur -->
 		    <h:form>
 		       ht: <h:inputText value="#{calculTva.ht}" /> <br/>
 		       taux: <h:inputText value="#{calculTva.taux}" /> <br/>
@@ -20,9 +21,6 @@
 		    </h:form>
 		    tva = <h:outputText value="#{calculTva.tva}" /> <br/>
 		    ttc = <h:outputText value="#{calculTva.ttc}" /> <br/>
-	</ui:define>
-	<ui:define name="footer">
-	    Pied de page qui va bien
 	</ui:define>
 </ui:composition>
 </html>
