@@ -15,7 +15,7 @@ public class ServiceProduit {
 	
 	private static ServiceProduit uniqueInstance=null;
 	
-	public static synchronized ServiceProduit getInstance() {
+	public static /*synchronized*/ ServiceProduit getInstance() {
 		if(uniqueInstance==null) {
 			uniqueInstance=new ServiceProduit();
 		}
