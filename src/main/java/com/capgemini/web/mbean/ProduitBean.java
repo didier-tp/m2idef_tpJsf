@@ -14,7 +14,7 @@ public class ProduitBean {
 	
 	private List<Produit> listeProduits; //à afficher dans tableau
 	
-	private Long categorie=1L; //id de la categorie choisie/selectionnee 
+	private Long categorie=1L;  //id de la categorie choisie/selectionnee 
 	                        // via liste déroulante (+get/set) 
 							//avec 1L comme valeur par defaut
 	public String filtrerSelonCategorie() {

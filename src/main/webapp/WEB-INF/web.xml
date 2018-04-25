@@ -10,6 +10,12 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <error-page>
+	  <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+	  <location>/welcome.jsf</location>
+		<!-- redirection automatique vers menu welcome si session http expirée -->
+	</error-page>
+  
   <context-param>
 <param-name>facelets.REFRESH_PERIOD</param-name>
 <param-value>2</param-value>
