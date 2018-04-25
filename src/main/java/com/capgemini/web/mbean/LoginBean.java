@@ -15,7 +15,8 @@ public class LoginBean {
 	private String password;
 	
 	private void demoInutileJusteLienAvecApiServlet() {
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+				   .getExternalContext().getSession(true);
 		session.setAttribute("clef", "valeur");
 		
 		String strUsername = FacesContext.getCurrentInstance().getExternalContext()
