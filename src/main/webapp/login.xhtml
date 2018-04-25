@@ -11,7 +11,7 @@
 	<ui:define name="header">login / connexion</ui:define>
 	<ui:define name="content">
 	   <h:messages  globalOnly="true"  class="error" /> <!-- affiche d'eventuels messages d'erreur -->
-     <h:form>
+     <h:form  id="loginForm">
        username: <h:inputText id="username" label="username"
                      value="#{loginBean.username}"
                      required="true" >

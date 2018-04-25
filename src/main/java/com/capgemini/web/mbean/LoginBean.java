@@ -4,6 +4,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
 //@RequestScoped
@@ -13,8 +14,20 @@ public class LoginBean {
 	private String username;
 	private String password;
 	
+	private void demoInutileJusteLienAvecApiServlet() {
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+		session.setAttribute("clef", "valeur");
+		
+		String strUsername = FacesContext.getCurrentInstance().getExternalContext()
+				.getRequestParameterMap().get("loginForm:username");
+		System.out.println("username:" + strUsername);
+	}
+	
+	
+	
 	public String connexion() {
 		String suite = null;
+		demoInutileJusteLienAvecApiServlet();
 		if(password.equals("pwd"+username)) {
 			suite="user";
 		}else {
