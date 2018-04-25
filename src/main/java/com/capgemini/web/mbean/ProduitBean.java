@@ -19,8 +19,10 @@ public class ProduitBean {
 							//avec 1L comme valeur par defaut
 	public String filtrerSelonCategorie() {
 		String suite = null;
-		System.out.println("categorie=" + categorie);
-		//...
+		System.out.println("categorie=" + categorie);//à visualiser dans console eclipse/tomcat
+		//reactualisation de la liste des produits selon categorie choisie:
+		this.listeProduits = 
+				this.serviceProduit.rechercherProduitsParCategorie(this.categorie);
 		return suite;
 	}
 	

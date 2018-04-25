@@ -25,8 +25,15 @@ public class ServiceProduit {
 	private List<Produit> produits; //+get/set ou ...
 	
 	public List<Produit> rechercherProduitsParCategorie(Long catId){
-		//version 1 : sans tenir compte de catId
-		return this.produits;
+		List<Produit> sousListeProduits = new ArrayList<Produit>();
+		for(Produit prod : this.produits) {
+			if(    (catId==1 && prod.getNum()<=10 )
+				|| (catId==2 && prod.getNum()>=10 && prod.getNum()<=20)
+				|| (catId==3 && prod.getNum()>=21)) {
+				sousListeProduits.add(prod);
+			} //sur vrai projet SELECT * From Produit WHERE ....
+		}
+		return sousListeProduits;
 	}
 	
 	public ServiceProduit(){
