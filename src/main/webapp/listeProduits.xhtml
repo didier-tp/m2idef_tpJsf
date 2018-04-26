@@ -14,11 +14,15 @@
 	
 	<h:form>
 	
-	    <h:selectBooleanCheckbox value="#{produitBean.avecDetails}">avecDetails
+	    <h:selectBooleanCheckbox value="#{produitBean.avecDetails}"
+	       valueChangeListener="#{produitBean.onDetailsChange}" 
+	       onclick="submit()" >avecDetails
 	      </h:selectBooleanCheckbox> <br/>
 	
-	
-		<h:selectOneMenu value="#{produitBean.categorie}">
+	    categorie:
+		<h:selectOneMenu value="#{produitBean.categorie}"
+		    			 valueChangeListener="#{produitBean.onCategorieChange}" 
+	        			 onchange="submit()">
 		   <f:selectItems value="#{produitBean.listeCategorie}"
                      var="c" itemValue="#{c.idCat}" itemLabel="#{c.label}"/>
 		   <!--  
@@ -27,9 +31,9 @@
 			<f:selectItem itemValue="3" itemLabel="livre"/>
 			-->
 		</h:selectOneMenu>
-		
-		<h:commandButton value="filtrer selon categorie"
-		                 action="#{produitBean.filtrerSelonCategorie}"/>
+		<!--  plus besoin de commandButton value="filtrer selon categorie"
+		              ni de l'action produitBean.filtrerSelonCategorie 
+		 -->
 		
 	</h:form>
 	
