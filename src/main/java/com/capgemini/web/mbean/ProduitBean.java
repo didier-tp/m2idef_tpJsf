@@ -13,6 +13,8 @@ import com.capgemini.service.ServiceProduit;
 @RequestScoped //ou SessionScoped
 public class ProduitBean {
 	
+	private Boolean avecDetails = Boolean.FALSE; //avec valeur par defaut et get/set
+	
 	private List<Produit> listeProduits; //à afficher dans tableau
 	
 	private List<Categorie> listeCategorie; //pour remplir valeurs selectionnables
@@ -23,6 +25,7 @@ public class ProduitBean {
 							//avec 1L comme valeur par defaut
 	public String filtrerSelonCategorie() {
 		String suite = null;
+		System.out.println("avecDetails=" + avecDetails);
 		System.out.println("categorie=" + categorie);//à visualiser dans console eclipse/tomcat
 		//reactualisation de la liste des produits selon categorie choisie:
 		this.listeProduits = 
@@ -59,6 +62,14 @@ public class ProduitBean {
 
 	public void setListeCategorie(List<Categorie> listeCategorie) {
 		this.listeCategorie = listeCategorie;
+	}
+
+	public Boolean getAvecDetails() {
+		return avecDetails;
+	}
+
+	public void setAvecDetails(Boolean avecDetails) {
+		this.avecDetails = avecDetails;
 	}
 	
 	

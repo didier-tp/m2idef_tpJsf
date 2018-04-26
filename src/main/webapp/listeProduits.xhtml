@@ -11,7 +11,12 @@
 	<ui:define name="header">liste des produits</ui:define>
 	<ui:define name="content">
 	
+	
 	<h:form>
+	
+	    <h:selectBooleanCheckbox value="#{produitBean.avecDetails}">avecDetails
+	      </h:selectBooleanCheckbox> <br/>
+	
 	
 		<h:selectOneMenu value="#{produitBean.categorie}">
 		   <f:selectItems value="#{produitBean.listeCategorie}"
@@ -41,6 +46,10 @@
 	               <h:column>
 	               <f:facet name="header"><f:verbatim>prix</f:verbatim></f:facet>
 	                  <h:outputText value="#{p.prix}" />
+	              </h:column>
+	              <h:column rendered="#{produitBean.avecDetails}">
+	               <f:facet name="header"><f:verbatim>description</f:verbatim></f:facet>
+	                  <h:outputText value="#{p.description}" />
 	              </h:column>
 	         </h:dataTable>
 	</ui:define>
