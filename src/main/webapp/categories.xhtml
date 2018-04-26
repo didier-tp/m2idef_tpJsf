@@ -11,7 +11,7 @@
 	<ui:define name="header">categories</ui:define>
 	<ui:define name="content">
 	<h:form>        
-       <h:selectOneListbox value="#{categorieBean.idCategorie}"
+       <h:selectOneListbox id="idListbox" value="#{categorieBean.idCategorie}"
 		    			 valueChangeListener="#{categorieBean.onCategorieChange}" > 
 		   <f:ajax event="click" render="idDetailGroup"/> 
 		   <f:selectItems value="#{categorieBean.listeCategorie}"
@@ -20,6 +20,20 @@
 		<h:panelGroup id="idDetailGroup">
 		     idCat : <h:inputText value="#{categorieBean.categorie.idCat}"/><br/>
 		     label : <h:inputText value="#{categorieBean.categorie.label}"/><br/>
+		     <h:commandButton value="New" disabled="#{categorieBean.bNew}"
+		         actionListener="#{categorieBean.onNewCategorie}" >
+		     	<f:ajax render="idDetailGroup" />
+		     </h:commandButton> - 
+		     <h:commandButton value="Add" disabled="#{!categorieBean.bNew}"
+		        actionListener="#{categorieBean.onAddCategorie}" >
+		     	<f:ajax render="idDetailGroup idListbox" execute="@form" />
+		     </h:commandButton> - 
+		     <h:commandButton value="Update" actionListener="#{categorieBean.onUpdateCategorie}" >
+		     	<f:ajax render="idDetailGroup idListbox"  execute="@form" />
+		     </h:commandButton> - 
+		     <h:commandButton value="Delete" actionListener="#{categorieBean.onDeleteCategorie}" >
+		     	<f:ajax render="idDetailGroup idListbox" execute="@form" />
+		     </h:commandButton> 
 		</h:panelGroup>
     </h:form> 
 	</ui:define>
