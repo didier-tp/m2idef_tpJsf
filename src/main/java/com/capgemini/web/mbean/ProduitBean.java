@@ -15,6 +15,10 @@ import com.capgemini.service.ServiceProduit;
 @SessionScoped
 public class ProduitBean {
 	
+	//private Long idProduit; //selectionné , à détailler (avec get/set)
+	//et/ou
+	private Produit produit; //selectionné , à détailler (avec get/set)
+	
 	private Date date; //+get/set
 	
 	private Boolean avecDetails = Boolean.FALSE; //avec valeur par defaut et get/set
@@ -103,6 +107,14 @@ public class ProduitBean {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Produit getProduit() {
+		return produit;
+	}
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
 	}
 	
 	

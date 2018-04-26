@@ -10,7 +10,9 @@
     <ui:define name="title">detailProduit</ui:define>
 	<ui:define name="header">detail produit</ui:define>
 	<ui:define name="content">
-	        .... afficher les details du produit selectionne ....
+	        <h:outputText value="#{produitBean.produit.num}"/> <br/>
+	         <h:outputText value="#{produitBean.produit.label}"/> <br/>
+	          <h:outputText value="#{produitBean.produit.description}"/> <br/>
 	</ui:define>
 </ui:composition>
 </html>

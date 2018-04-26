@@ -44,7 +44,14 @@
 	              <h:column>
 	                  <f:facet name="header"><f:verbatim>numero</f:verbatim></f:facet>
 	                  <h:commandLink value="#{p.num}" 
-	                                 action="#{produitBean.detaillerProduit}"/> 
+	                                 action="#{produitBean.detaillerProduit}">
+	                       <f:setPropertyActionListener value="#{p}" 
+	                                     target="#{produitBean.produit}" /> 
+	                        <!-- le produit selectionne #{p} de la n eme ligne
+	                             selectionné du tableau sera automatiquement
+	                             recopié dans la variable produit de produitBean
+	                             juste avant que  detaillerProduit() soit appelé -->             
+	                   </h:commandLink>
 	              </h:column>
 	               <h:column>
 	               <f:facet name="header"><f:verbatim>label</f:verbatim></f:facet>
