@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="templates/common.xhtml">
+    <ui:define name="title">categories</ui:define>
+	<ui:define name="header">categories</ui:define>
+	<ui:define name="content">
+	<h:form>        
+       <h:selectOneListbox value="#{categorieBean.idCategorie}"
+		    			 valueChangeListener="#{categorieBean.onCategorieChange}" > 
+		   <f:ajax event="click" render="idDetailGroup"/> 
+		   <f:selectItems value="#{categorieBean.listeCategorie}"
+                     var="c" itemValue="#{c.idCat}" itemLabel="#{c.idCat} - #{c.label}"/>		   
+		</h:selectOneListbox><br/>
+		<h:panelGroup id="idDetailGroup">
+		     idCat : <h:inputText value="#{categorieBean.categorie.idCat}"/><br/>
+		     label : <h:inputText value="#{categorieBean.categorie.label}"/><br/>
+		</h:panelGroup>
+    </h:form> 
+	</ui:define>
+</ui:composition>
+</html>
