@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" >
 
 <ui:composition template="templates/common.xhtml">
     <ui:define name="title">listeProduits</ui:define>
@@ -15,11 +16,11 @@
 	
 	    <h:selectBooleanCheckbox value="#{produitBean.avecDetails}"
 	       valueChangeListener="#{produitBean.onDetailsChange}"  >avecDetails
-	           <f:ajax event="click" render="idTableau"/> 
+	           <f:ajax event="click" execute="@this" render="idTableau"/> 
 	           <!-- render="idDelaPartieDeLaPage_a_rafraichir" -->
 	       </h:selectBooleanCheckbox>
-	      <br/>
-	
+	      <br/> 
+	    date : <p:calendar value="#{produitBean.date}" /> <br/> 
 	    categorie:
 		<h:selectOneMenu value="#{produitBean.categorie}"
 		    			 valueChangeListener="#{produitBean.onCategorieChange}" >

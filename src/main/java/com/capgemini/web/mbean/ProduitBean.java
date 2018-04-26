@@ -1,5 +1,6 @@
 package com.capgemini.web.mbean;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -13,6 +14,8 @@ import com.capgemini.service.ServiceProduit;
 @ManagedBean
 @SessionScoped
 public class ProduitBean {
+	
+	private Date date; //+get/set
 	
 	private Boolean avecDetails = Boolean.FALSE; //avec valeur par defaut et get/set
 	
@@ -87,6 +90,14 @@ public class ProduitBean {
 
 	public void setAvecDetails(Boolean avecDetails) {
 		this.avecDetails = avecDetails;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 	
