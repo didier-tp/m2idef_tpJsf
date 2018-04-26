@@ -28,7 +28,8 @@ public class ServiceProduit {
 	public List<Produit> rechercherProduitsParCategorie(Long catId){
 		List<Produit> sousListeProduits = new ArrayList<Produit>();
 		for(Produit prod : this.produits) {
-			if(    (catId==1 && prod.getNum()<=10 )
+			if( (catId==0) 
+				|| (catId==1 && prod.getNum()<=10 )
 				|| (catId==2 && prod.getNum()>=10 && prod.getNum()<=20)
 				|| (catId==3 && prod.getNum()>=21)) {
 				sousListeProduits.add(prod);
@@ -51,6 +52,7 @@ public class ServiceProduit {
 	
 	public List<Categorie> rechercherListeCategories(){
 		List<Categorie> listeCat = new ArrayList<Categorie>();
+		listeCat.add(new Categorie(0L,"ALL"));
 		listeCat.add(new Categorie(1L,"fournitures de bureau"));
 		listeCat.add(new Categorie(2L,"films"));
 		listeCat.add(new Categorie(3L,"livres"));

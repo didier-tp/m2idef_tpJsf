@@ -21,20 +21,10 @@ public class ProduitBean {
 	private List<Categorie> listeCategorie; //pour remplir valeurs selectionnables
 	                                        //dans liste deroulante (+get/set)
 	
-	private Long categorie=1L;  //id de la categorie choisie/selectionnee 
+	private Long categorie=0L;  //id de la categorie choisie/selectionnee 
 	                        // via liste déroulante (+get/set) 
 							//avec 1L comme valeur par defaut
-	/*
-	public String filtrerSelonCategorie() {
-		String suite = null;
-		System.out.println("avecDetails=" + avecDetails);
-		System.out.println("categorie=" + categorie);//à visualiser dans console eclipse/tomcat
-		//reactualisation de la liste des produits selon categorie choisie:
-		this.listeProduits = 
-				this.serviceProduit.rechercherProduitsParCategorie(this.categorie);
-		return suite;
-	}
-	*/
+	
 	
 	public void onDetailsChange(ValueChangeEvent event) {
 		this.avecDetails = (Boolean) event.getNewValue();
@@ -58,6 +48,18 @@ public class ProduitBean {
 		//avec 1L : id de la categorie par defaut (1L = 1 de type Long)
 		this.listeCategorie = this.serviceProduit.rechercherListeCategories();
 	}
+	
+	/*
+	public String filtrerSelonCategorie() {
+		String suite = null;
+		System.out.println("avecDetails=" + avecDetails);
+		System.out.println("categorie=" + categorie);//à visualiser dans console eclipse/tomcat
+		//reactualisation de la liste des produits selon categorie choisie:
+		this.listeProduits = 
+				this.serviceProduit.rechercherProduitsParCategorie(this.categorie);
+		return suite;
+	}
+	*/
 
 	public List<Produit> getListeProduits() {
 		return listeProduits;

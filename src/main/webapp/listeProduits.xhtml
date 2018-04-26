@@ -10,19 +10,20 @@
     <ui:define name="title">listeProduits</ui:define>
 	<ui:define name="header">liste des produits</ui:define>
 	<ui:define name="content">
-	
-	
+		
 	<h:form>
 	
 	    <h:selectBooleanCheckbox value="#{produitBean.avecDetails}"
-	       valueChangeListener="#{produitBean.onDetailsChange}" 
-	       onclick="submit()" />avecDetails
+	       valueChangeListener="#{produitBean.onDetailsChange}"  >avecDetails
+	           <f:ajax event="click" render="idTableau"/> 
+	           <!-- render="idDelaPartieDeLaPage_a_rafraichir" -->
+	       </h:selectBooleanCheckbox>
 	      <br/>
 	
 	    categorie:
 		<h:selectOneMenu value="#{produitBean.categorie}"
-		    			 valueChangeListener="#{produitBean.onCategorieChange}" 
-	        			 onchange="submit()">
+		    			 valueChangeListener="#{produitBean.onCategorieChange}" >
+		   <f:ajax event="change" render="idTableau"/> 
 		   <f:selectItems value="#{produitBean.listeCategorie}"
                      var="c" itemValue="#{c.idCat}" itemLabel="#{c.label}"/>
 		   <!--  
@@ -37,7 +38,7 @@
 		
 	</h:form>
 	
-	         <h:dataTable value="#{produitBean.listeProduits}"
+	         <h:dataTable id="idTableau" value="#{produitBean.listeProduits}"
 	                      var="p" border="1">
 	              <h:column>
 	                  <f:facet name="header"><f:verbatim>numero</f:verbatim></f:facet>
