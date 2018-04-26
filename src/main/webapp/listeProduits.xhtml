@@ -26,7 +26,7 @@
 		    			 valueChangeListener="#{produitBean.onCategorieChange}" >
 		   <f:ajax event="change" render="idTableau"/> 
 		   <f:selectItems value="#{produitBean.listeCategorie}"
-                     var="c" itemValue="#{c.idCat}" itemLabel="#{c.label}"/>
+                     var="c" itemValue="#{c.idCat}" itemLabel="#{c.idCat} - #{c.label}"/>
 		   <!--  
 			<f:selectItem itemValue="1" itemLabel="bureau"/>
 			<f:selectItem itemValue="2" itemLabel="film"/>
