@@ -28,6 +28,11 @@ public class ProduitBean {
 	                        // via liste déroulante (+get/set) 
 							//avec 1L comme valeur par defaut
 	
+	public String detaillerProduit() {
+		String suite="detailProduit";//.jsp ou .xhtml
+		//...
+		return suite;
+	}
 	
 	public void onDetailsChange(ValueChangeEvent event) {
 		this.avecDetails = (Boolean) event.getNewValue();
@@ -47,7 +52,7 @@ public class ProduitBean {
 	public ProduitBean() {
 		this.serviceProduit = ServiceProduit.getInstance();//singleton
 		this.listeProduits = 
-			this.serviceProduit.rechercherProduitsParCategorie(1L);
+			this.serviceProduit.rechercherProduitsParCategorie(this.categorie);
 		//avec 1L : id de la categorie par defaut (1L = 1 de type Long)
 		this.listeCategorie = this.serviceProduit.rechercherListeCategories();
 	}
